@@ -43,9 +43,6 @@ installation.
 3. Install it using Sileo, Zebra, or another package manager.
 4. Restart SpringBoard or reboot userspace.
 
-Remove packages with the old experimental identifier
-`com.codex.neverlowermusic16` before installing.
-
 ## Building
 
 Install [Theos](https://theos.dev/) with an iOS SDK, then run:
