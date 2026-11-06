@@ -1,30 +1,10 @@
-# NeverLowerMusic16 1.0.0
+## 1.0.1
 
-Initial public release.
+- Renamed NeverLowerMusic16 to Never Lower Music.
+- Opens installation to iOS 16.0 and later. Includes separate rootless and native RootHide packages.
 
-## Features
+While media is playing, notification sounds follow the media volume instead of the ringer volume.
 
-- Prevents notifications from ducking or lowering actively playing media.
-- Plays notification and media audio together.
-- Uses normal iOS notification playback when media is stopped or paused.
-- Ringer volume and Silent Mode work normally when media is not playing.
-- Avoids duplicate or echoed notification sounds.
-- Contains no diagnostics or analytics.
+Tested on iPhone 8 Plus with iOS 16.6 and Dopamine RootHide using the earlier converted package. The native build was tested on iPhone 11 Pro Max with iOS 26.0.1 and Dopamine 3 RootHide.
 
-## Volume behavior
-
-While media is playing, notification volume follows the current media volume.
-When media is not playing, notification volume follows the normal ringer
-setting.
-
-## Compatibility
-
-- iOS 16.x
-- Rootless Dopamine/ElleKit
-- Dopamine RootHide after conversion with RootHide Patcher
-- arm64 and arm64e
-
-Tested on iPhone 8 Plus, iOS 16.6, Dopamine RootHide.
-
-Inspired by NeverLowerMusic by Rishanan. Coded with OpenAI Codex and tested by
-sahinkaa.
+Original NeverLowerMusic idea by Rishanan.

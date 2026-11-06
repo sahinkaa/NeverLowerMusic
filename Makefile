@@ -1,7 +1,6 @@
+THEOS_PACKAGE_SCHEME ?= rootless
 ARCHS = arm64 arm64e
-TARGET = iphone:clang:latest:15.0
-
-THEOS_PACKAGE_SCHEME = rootless
+TARGET = iphone:clang:latest:16.0
 
 include $(THEOS)/makefiles/common.mk
 

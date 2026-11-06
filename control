@@ -1,9 +1,10 @@
 Package: com.sahinkaa.neverlowermusic16
-Name: NeverLowerMusic16
-Version: 1.0.0
+Name: Never Lower Music
+Version: 1.0.1
 Architecture: iphoneos-arm64
-Description: Prevents notification sounds from lowering now-playing audio on iOS 16. During playback, notification volume follows media volume.
+Description: Prevents notification sounds from lowering now-playing audio. During playback, notification volume follows media volume.
+ Tested on iPhone 8 Plus (iOS 16.6, Dopamine RootHide via conversion) and iPhone 11 Pro Max (iOS 26.0.1, Dopamine 3 RootHide).
 Maintainer: sahinkaa
-Author: sahinkaa
+Author: Rishanan • sahinkaa
 Section: Tweaks
-Depends: firmware (>= 16.0), firmware (<< 17.0), mobilesubstrate
+Depends: firmware (>= 16.0), mobilesubstrate

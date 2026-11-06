@@ -1,69 +1,40 @@
-# NeverLowerMusic16
+# Never Lower Music
 
-NeverLowerMusic16 prevents notification sounds from lowering or ducking
-now-playing audio on iOS 16.
-
-## Volume behavior
-
-- **While media is playing:** the notification and media play together without
-  ducking. Notification loudness follows the current **media volume**, not the
-  separate ringer-volume setting.
-- **While media is stopped or paused:** the normal iOS notification path is
-  used. Notification loudness follows **ringer volume**, and Silent Mode works
-  normally.
-
-## How it works
-
-The tweak records the sound file associated with each notification
-system-sound ID. While media is playing, it replays that file through a mixed
-ambient audio session and suppresses the original system-sound call. This
-prevents iOS from reducing the volume of the playing media and avoids a
-duplicate or echoed notification.
-
-If media is not playing, or if mixed playback cannot start, the tweak leaves
-notification playback to iOS.
+Keep music and other media at their current volume when a notification sound plays.
 
 ## Compatibility
 
-- iOS 16.x
-- Rootless jailbreaks with a Substrate-compatible injector
-- Dopamine with ElleKit
-- arm64 and arm64e
+Installable on iOS 16.0 and later. Separate packages are available for rootless and RootHide jailbreaks with a Substrate-compatible tweak injector.
 
-Tested on an iPhone 8 Plus running iOS 16.6 with Dopamine RootHide after
-converting the package with RootHide Patcher.
+- iPhone 8 Plus on iOS 16.6 with Dopamine RootHide, tested with the earlier converted package.
+- iPhone 11 Pro Max on iOS 26.0.1 with Dopamine 3 RootHide, tested with the native build.
 
-RootHide users must convert the release package with RootHide Patcher before
-installation.
+## Notification volume
+
+While media is playing, notification sounds follow the media volume instead of the ringer volume. When media is paused or stopped, iOS handles notification sounds with its usual ringer and Silent Mode behavior. The tweak also falls back to iOS playback if mixed playback cannot start.
 
 ## Installation
 
-1. Download the `.deb` from the GitHub Releases page.
-2. RootHide users: convert it with RootHide Patcher.
-3. Install it using Sileo, Zebra, or another package manager.
-4. Restart SpringBoard or reboot userspace.
+1. Add [sahinkaa](https://sahinkaa.github.io/) to Sileo or Zebra and install **Never Lower Music**. You can also download the matching package from [GitHub Releases](https://github.com/sahinkaa/NeverLowerMusic/releases).
+2. Choose `iphoneos-arm64` for rootless or `iphoneos-arm64e` for RootHide when installing a downloaded package. The RootHide package installs directly.
+3. Restart userspace to reload SpringBoard and the audio services.
+
+Existing NeverLowerMusic16 installs can upgrade in place, including packages converted with RootHide Patcher. The package identifier is `com.sahinkaa.neverlowermusic16`.
 
 ## Building
 
-Install [Theos](https://theos.dev/) with an iOS SDK, then run:
+Use [Theos](https://theos.dev/) with an iOS SDK and the RootHide package scheme for the native RootHide build.
 
 ```sh
 export THEOS=/path/to/theos
-make clean package FINALPACKAGE=1
+make clean package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
+make clean package THEOS_PACKAGE_SCHEME=roothide FINALPACKAGE=1
 ```
 
-The rootless package will be created inside `packages/`.
+The packages are written to `packages/`.
 
-## Credits and authorship
+## Credits
 
-Inspired by the original **NeverLowerMusic** tweak by **Rishanan**.
+The idea comes from the original **NeverLowerMusic** tweak by **Rishanan**. This implementation was built with Codex and tested by sahinkaa.
 
-This project was coded with **OpenAI Codex** and tested by **sahinkaa**.
-sahinkaa is not a developer and does not claim to have written the code
-manually.
-
-## Redistribution
-
-The project is released under the MIT License. Anyone may host it on a
-jailbreak repository, build it, modify it, and redistribute it in accordance
-with the license.
+Released under the [MIT License](LICENSE).
